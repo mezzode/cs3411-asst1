@@ -56,3 +56,16 @@ all_like(What, List) :-
 % sqrt_table(N, M, Result)
 % Result is a list of pairs [A, B] where A are numbers from N to M and B
 % is the square root of A.
+
+sqrt_table(N, M, Result) :- 
+    N >= M,
+    Next is N - 1,
+    sqrt_table(Next, M, Tail),
+    Result = [Head | Tail],
+    Head = [N, Root],
+    Root is sqrt(N).
+    
+sqrt_table(N, M, Result) :-
+    N = M,
+    Root is sqrt(N),
+    Result = [[N, Root]]
