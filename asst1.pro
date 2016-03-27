@@ -16,20 +16,20 @@ even(Number) :- 0 is Number mod 2.
 odd(Number) :- 1 is Number mod 2.
 
 % add square of even numbers
-sumsq_even(List, Sum) :-
-    List = [Head | Tail],
+sumsq_even(Numbers, Sum) :-
+    Numbers = [Head | Tail],
     sumsq_even(Tail, Rest),
     even(Head),
     Sum is Head * Head + Rest.
 
 % skip odd numbers
-sumsq_even(List, Sum) :-
-    List = [Head | Tail],
+sumsq_even(Numbers, Sum) :-
+    Numbers = [Head | Tail],
     sumsq_even(Tail, Rest),
     odd(Head),
     Sum = Rest.
 
 % base case
-sumsq_even(List, Sum) :-
-    List = [],
+sumsq_even(Numbers, Sum) :-
+    Numbers = [],
     Sum = 0.
