@@ -12,8 +12,8 @@
 % sumsq_even(Numbers, Sum) :-
 %     .
 
-even(Number) :- Number is _ * 2.
-odd(Number) :- Number is _ * 2 + 1.
+even(Number) :- 0 is Number mod 2.
+odd(Number) :- 1 is Number mod 2.
 
 % add even numbers
 sum_even(List, Sum) :-
