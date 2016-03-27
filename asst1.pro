@@ -7,6 +7,8 @@
 %   function of the predicate. 
 % - Test code; write test cases for every part.
 
+% Question 1
+
 % even(Number) is true if Number is even
 even(Number) :- 0 is Number mod 2.
 % odd(Number) is true if Number is odd
@@ -33,3 +35,18 @@ sumsq_even(Numbers, Sum) :-
 sumsq_even(Numbers, Sum) :-
     Numbers = [],
     Sum = 0.
+
+% Question 2
+
+% all_like(What, List)
+% Suceeds if List is empty or contains only people who like What.
+
+% base case
+all_like(What, List) :-
+    List = [].
+
+% recursion
+all_like(What, List) :-
+    List = [Head | Tail],
+    likes(Head, What),
+    all_like(What, Tail).
