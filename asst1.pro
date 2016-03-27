@@ -15,21 +15,21 @@
 even(Number) :- 0 is Number mod 2.
 odd(Number) :- 1 is Number mod 2.
 
-% add even numbers
-sum_even(List, Sum) :-
+% add square of even numbers
+sumsq_even(List, Sum) :-
     List = [Head | Tail],
-    sum_even(Tail, Rest),
+    sumsq_even(Tail, Rest),
     even(Head),
-    Sum is Head + Rest.
+    Sum is Head * Head + Rest.
 
 % skip odd numbers
-sum_even(List, Sum) :-
+sumsq_even(List, Sum) :-
     List = [Head | Tail],
-    sum_even(Tail, Rest),
+    sumsq_even(Tail, Rest),
     odd(Head),
     Sum = Rest.
 
 % base case
-sum_even(List, Sum) :-
+sumsq_even(List, Sum) :-
     List = [],
     Sum = 0.
