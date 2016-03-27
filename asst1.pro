@@ -7,13 +7,13 @@
 %   function of the predicate. 
 % - Test code; write test cases for every part.
 
+% even(Number) is true if Number is even
+even(Number) :- 0 is Number mod 2.
+% odd(Number) is true if Number is odd
+odd(Number) :- 1 is Number mod 2.
+
 % sumsq_even(Numbers, Sum)
 % Sum is the sum of the squares of the even numbers in the list Numbers.
-% sumsq_even(Numbers, Sum) :-
-%     .
-
-even(Number) :- 0 is Number mod 2.
-odd(Number) :- 1 is Number mod 2.
 
 % add square of even numbers
 sumsq_even(Numbers, Sum) :-
