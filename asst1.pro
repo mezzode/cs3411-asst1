@@ -89,8 +89,8 @@ chop_down(List, NewList) :-
 
 % valid List (?)
 chop_down(List, NewList) :-
-    List = [First, Tail],
-    Tail = [Second, Tail2],
+    List = [First | Tail],
+    Tail = [Second | Tail2],
     First =\= Second - 1,
     chop_down(Tail, Tail),
     NewList = List.
