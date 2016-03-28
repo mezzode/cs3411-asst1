@@ -68,4 +68,4 @@ sqrt_table(N, M, Result) :-
 sqrt_table(N, M, Result) :-
     N = M,
     Root is sqrt(N),
-    Result = [[N, Root]]
+    Result = [[N, Root]].
