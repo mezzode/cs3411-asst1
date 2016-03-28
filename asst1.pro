@@ -81,3 +81,16 @@ sqrt_table(N, M, Result) :-
 % chop_down([1, 3, 7, 6, 5, 10, 9], Result).
 % Result = [1, 3, 5, 9] ;
 % false.
+
+% empty List
+chop_down(List, NewList) :-
+    List = [],
+    NewList = List.
+
+% valid List (?)
+chop_down(List, NewList) :-
+    List = [First, Tail],
+    Tail = [Second, Tail2],
+    First =\= Second - 1,
+    chop_down(Tail, Tail),
+    NewList = List.
