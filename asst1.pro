@@ -91,7 +91,7 @@ chop_down(List, NewList) :-
 chop_down(List, NewList) :-
     List = [First | Tail],
     Tail = [Second | _],
-    Second =\= First - 1,
+    First =\= Second + 1,
     chop_down(Tail, NewList2),
     NewList = [First | NewList2].
 
@@ -99,5 +99,5 @@ chop_down(List, NewList) :-
 chop_down(List, NewList) :-
     List = [First | Tail],
     Tail = [Second | Tail2],
-    Second is First - 1,
+    First is Second + 1,
     chop_down(Tail, NewList).
