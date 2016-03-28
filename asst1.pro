@@ -71,3 +71,13 @@ sqrt_table(N, M, Result) :-
     M >= 0,
     Root is sqrt(N),
     Result = [[N, Root]].
+
+% Question 4
+
+% chop_down(List, NewList)
+% NewList is List with all sequences of successive decreasing whole
+% numbers replaced with the last number of the sequence.
+% e.g.
+% chop_down([1, 3, 7, 6, 5, 10, 9], Result).
+% Result = [1, 3, 5, 9] ;
+% false.
