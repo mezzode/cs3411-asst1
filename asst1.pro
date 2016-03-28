@@ -118,16 +118,11 @@ chop_down(List, NewList) :-
 
 % z leaf
 tree_eval(Value, Tree, Eval) :-
-    Tree = tree(Left, Node, Right),
-    Left = empty,
-    Right = empty,
-    Node = z,
+    Tree = tree(empty, z, empty),
     Eval = Value.
 
 % num leaf
 tree_eval(Value, Tree, Eval) :-
-    Tree = tree(Left, Node, Right),
-    Left = empty,
-    Right = empty,
-    number(Node),
-    Eval = Node.
+    Tree = tree(empty, Num, empty),
+    number(Num),
+    Eval = Num.
