@@ -106,3 +106,12 @@ chop_down(List, NewList) :-
     Tail = [Second | Tail2],
     First is Second + 1,
     chop_down(Tail, NewList).
+
+% Question 5
+
+% tree_eval(Value, Tree, Eval)
+% Tree branches are of the form:
+% - tree(L, Op, R) where Op is one of '+', '-', '*', '/'
+% Tree leaves may be one of two forms:
+% - tree(empty, Num, empty) where Num is a number
+% - tree(empty, z, empty) where z represents Value
