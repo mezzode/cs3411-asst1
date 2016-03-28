@@ -59,6 +59,7 @@ all_like(What, List) :-
 
 sqrt_table(N, M, Result) :- 
     N >= M,
+    M >= 0,
     Next is N - 1,
     sqrt_table(Next, M, Tail),
     Result = [Head | Tail],
@@ -67,5 +68,6 @@ sqrt_table(N, M, Result) :-
     
 sqrt_table(N, M, Result) :-
     N = M,
+    M >= 0,
     Root is sqrt(N),
     Result = [[N, Root]].
