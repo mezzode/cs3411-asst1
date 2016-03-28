@@ -123,6 +123,5 @@ tree_eval(Value, Tree, Eval) :-
 
 % num leaf
 tree_eval(Value, Tree, Eval) :-
-    Tree = tree(empty, Num, empty),
-    number(Num),
-    Eval = Num.
+    Tree = tree(empty, Eval, empty),
+    number(Eval).
