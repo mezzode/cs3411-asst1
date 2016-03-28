@@ -55,7 +55,7 @@ all_like(What, List) :-
 
 % sqrt_table(N, M, Result)
 % Result is a list of pairs [A, B] where A are numbers from N to M and B
-% is the square root of A.
+% is the square root of A. N >= M, and both are non-negative integers.
 
 sqrt_table(N, M, Result) :- 
     N >= M,
