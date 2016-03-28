@@ -115,3 +115,11 @@ chop_down(List, NewList) :-
 % Tree leaves may be one of two forms:
 % - tree(empty, Num, empty) where Num is a number
 % - tree(empty, z, empty) where z represents Value
+
+% z leaf
+tree_eval(Value, Tree, Eval) :-
+    Tree = tree(Left, Node, Right),
+    Left = empty,
+    Right = empty,
+    Node = z,
+    Eval = Value.
