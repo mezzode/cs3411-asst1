@@ -123,3 +123,11 @@ tree_eval(Value, Tree, Eval) :-
     Right = empty,
     Node = z,
     Eval = Value.
+
+% num leaf
+tree_eval(Value, Tree, Eval) :-
+    Tree = tree(Left, Node, Right),
+    Left = empty,
+    Right = empty,
+    number(Node),
+    Eval = Node.
