@@ -94,3 +94,10 @@ chop_down(List, NewList) :-
     First =\= Second - 1,
     chop_down(Tail, Tail),
     NewList = List.
+
+chop_down(List, NewList) :-
+    List = [First | Tail],
+    Tail = [Second | Tail2],
+    First is Second - 1,
+    chop_down(Tail, NewList2),
+    NewList = NewList2.
