@@ -132,3 +132,24 @@ tree_eval(Value, Tree, Eval) :-
     tree_eval(Value, L, Left),
     tree_eval(Value, R, Right),
     Eval is Left + Right.
+
+% -
+tree_eval(Value, Tree, Eval) :-
+    Tree = tree(L, '-', R),
+    tree_eval(Value, L, Left),
+    tree_eval(Value, R, Right),
+    Eval is Left - Right.
+
+% *
+tree_eval(Value, Tree, Eval) :-
+    Tree = tree(L, '*', R),
+    tree_eval(Value, L, Left),
+    tree_eval(Value, R, Right),
+    Eval is Left * Right.
+
+% /
+tree_eval(Value, Tree, Eval) :-
+    Tree = tree(L, '/', R),
+    tree_eval(Value, L, Left),
+    tree_eval(Value, R, Right),
+    Eval is Left / Right.
