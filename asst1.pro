@@ -87,14 +87,15 @@ chop_down(List, NewList) :-
     List = [],
     NewList = List.
 
-% valid List (?)
+% continue if the first number is not part of a sequence
 chop_down(List, NewList) :-
     List = [First | Tail],
-    Tail = [Second | Tail2],
+    Tail = [Second | _],
     Second =\= First - 1,
-    chop_down(Tail, Tail),
-    NewList = List.
+    chop_down(Tail, NewList2),
+    NewList = [First | NewList2].
 
+% chop first number if it is part of a sequence
 chop_down(List, NewList) :-
     List = [First | Tail],
     Tail = [Second | Tail2],
