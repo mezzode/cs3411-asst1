@@ -87,6 +87,11 @@ chop_down(List, NewList) :-
     List = [],
     NewList = List.
 
+% single item list
+chop_down(List, NewList) :-
+    List = [_],
+    NewList = List.
+
 % continue if the first number is not part of a sequence
 chop_down(List, NewList) :-
     List = [First | Tail],
